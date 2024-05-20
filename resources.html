@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoGym Resources</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Satoshi", sans-serif;
+      }
+
+      .content-table {
+        border-collapse: collapse;
+        margin: 25px auto;
+        font-size: 0.9em;
+        min-width: 400px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(4, 4, 4, 0.15);
+      }
+
+      .content-table thead tr {
+        background-color: #373735;
+        color: #ffffff;
+        text-align: left;
+        font-weight: bold;
+      }
+
+      .content-table th,
+      .content-table td {
+        padding: 12px 15px;
+      }
+
+      .content-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+      }
+
+      .content-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+      }
+
+      .content-table tbody tr:last-of-type {
+        border-bottom: 2px solid #c5bf0f;
+      }
+
+      .content-table tbody tr.active-row {
+        font-weight: bold;
+        color: #000000;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px;
+      }
+      .logo img {
+        width: 100px;
+        height: 40px;
+        object-fit: cover;
+      }
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid black;
+      }
+      .nav-links {
+        display: flex;
+        justify-content: space-between;
+      }
+      .navbar .container .nav-links ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+      .navbar .container .nav-links ul li {
+        list-style: none;
+      }
+      .navbar .container .nav-links ul li a {
+        text-decoration: none;
+        color: black;
+      }
+      .navbar .container .nav-links ul li a:hover {
+        color: blue;
+      }
+      thead tr th {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        font-size: 24px;
+        margin: 16px;
+      }
+      .footer {
+        background: url("images/treadmill.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .footer h1 {
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        padding-top: 100px;
+      }
+      .menu-bar {
+        color: black;
+        display: none;
+        font-size: 25px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+      }
+      .aside-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        animation: slideIn 0.5s forwards;
+      }
+      .aside-links ul {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px;
+        align-items: center;
+      }
+      .aside-links ul li {
+        list-style: none;
+      }
+      .aside-links ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+      }
+      .aside-links ul li a:hover {
+        color: blue;
+      }
+      .close-menu {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+      }
+      @keyframes slideIn {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      .hidden {
+        display: none;
+      }
+      @media screen and (width <=1150px) {
+        .first-img img {
+          width: 300px;
+          height: 200px;
+        }
+        .second-img img {
+          width: 250px;
+          height: 400px;
+        }
+        .join-us img {
+          width: 300px;
+          height: 70px;
+        }
+        .desc-content {
+          gap: 100px;
+        }
+        .desc-content img {
+          width: 400px;
+          height: 350px;
+        }
+      }
+      @media screen and (width <=920px) {
+        .first-img img {
+          width: 250px;
+          height: 150px;
+        }
+        .second-img img {
+          width: 200px;
+          height: 350px;
+        }
+        .join-us img {
+          width: 250px;
+          height: 50px;
+        }
+        .desc-content {
+          gap: 50px;
+        }
+        .desc-content img {
+          width: 350px;
+          height: 300px;
+        }
+        .about-cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media screen and (width <=760px) {
+        .hero-content {
+          display: block;
+        }
+        .second-img img {
+          display: none;
+        }
+        .first-img {
+          display: none;
+        }
+        .join-us img {
+          width: 100%;
+          height: 200px;
+        }
+        .hero-title {
+          margin-top: 0;
+          max-width: 100%;
+        }
+        .hero-title h1 {
+          font-size: 40px;
+        }
+        .hero-subtitle {
+          font-size: 20px;
+        }
+        .desc-content img {
+          display: none;
+        }
+        .desc-content p {
+          font-size: 35px;
+        }
+        .desc-content {
+          display: block;
+          margin: 0 auto;
+        }
+        .desc-content p a {
+          font-size: 20px;
+          text-align: center;
+        }
+        .hero-subtitle {
+          display: none;
+        }
+      }
+
+      @media screen and (width <=770px) {
+        .about-cards {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
+        }
+        .about-heading h1 {
+          font-size: 40px;
+          text-align: center;
+        }
+        .menu-bar {
+          display: inline-block;
+        }
+        .nav-links {
+          display: none;
+        }
+      }
+      @media screen and (width <=500px) {
+        .desc-content p {
+          font-size: 30px;
+        }
+        .desc-content p a {
+          font-size: 18px;
+        }
+        .about-heading h1 {
+          font-size: 30px;
+        }
+        .hero-title h1 {
+          font-size: 30px;
+          text-align: center;
+        }
+      }
+      @media screen and (width <=365px) {
+        .desc-content p {
+          font-size: 25px;
+          text-align: center;
+        }
+        .desc-content p a {
+          font-size: 16px;
+        }
+        .about-cards .card .card-img {
+          max-width: 200px;
+        }
+      }
+    </style>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <img src="images/logo.jpg" alt="logo" />
+          </div>
+          <div class="nav-links">
+            <ul>
+              <li><a href="Index.html"></a> Home</li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="AboutUs.html">About us</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="contact_us.html">Contact us</a></li>
+              <li><a href="BMI.html">BMI </a></li>
+            </ul>
+          </div>
+          <button class="menu-bar">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+      <aside class="aside-content hidden">
+        <div class="container">
+          <div class="aside-links">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="AboutUs.html">About us</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="contact_us.html">Contact us</a></li>
+              <li><a href="BMI.html">BMI</a></li>
+            </ul>
+          </div>
+          <button class="close-menu hidden">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </aside>
+    </header>
+
+    <p style="color: #1a2c50">
+      Welcome to GoGym! Our online platform is designed to help you achieve your
+      fitness goals conveniently from anywhere. With a range of useful services,
+      including personalized workout plans, live virtual classes, nutrition
+      guidance, and progress tracking tools, we're here to support you on your
+      fitness journey. Whether you're a beginner or a seasoned athlete, our goal
+      is to make fitness accessible and enjoyable for everyone. Join us and
+      let's get started on reaching your health and wellness goals together!
+    </p>
+    <br /><br /><br />
+    <p style="font-size: 20px; font-weight: bold; color: #1a2c50">
+      For more information about other sites please visit these links:
+    </p>
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Begym</td>
+          <td>
+            <a
+              href="https://themes.muffingroup.com/be/gym/ "
+              style="color: darkgray"
+              >https://themes.muffingroup.com/be/gym/</a
+            >
+          </td>
+        </tr>
+        <tr class="active-row">
+          <td>go180</td>
+          <td>
+            <a href="https://go180.nl/" style="color: darkgray"
+              >https://go180.nl/</a
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>BeGym2</td>
+          <td>
+            <a
+              href="https://themes.muffingroup.com/be/gym2/"
+              style="color: darkgray"
+              >https://themes.muffingroup.com/be/gym2/</a
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>gymbox</td>
+          <td>
+            <a href="https://www.gymbox.com/" style="color: darkgray"
+              >https://www.gymbox.com/</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <h1>
+            Health is the greatest gift, contentment the greatest wealth,
+            faithfulness the best relationship.
+          </h1>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const asideContent = document.querySelector(".aside-content");
+      const closeAside = document.querySelector(".close-menu");
+      const openAside = document.querySelector(".menu-bar");
+
+      openAside.addEventListener("click", () => {
+        asideContent.classList.toggle("hidden");
+        openAside.classList.toggle("hidden");
+        closeAside.classList.toggle("hidden");
+      });
+
+      closeAside.addEventListener("click", () => {
+        asideContent.classList.toggle("hidden");
+        openAside.classList.toggle("hidden");
+        closeAside.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Satoshi", sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  color: #080101;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.services {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.service {
+  width: 30%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.submit-btn {
+  margin-top: 2rem;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.6rem;
+}
+input[type="number"] {
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+}
+.bmi-calculator {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.bmi-calculator form {
+  margin-bottom: 1rem;
+}
+
+footer {
+  color: #0a0000;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px;
+}
+.logo img {
+  width: 100px;
+  height: 40px;
+  object-fit: cover;
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar .container .nav-links ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.navbar .container .nav-links ul li {
+  list-style: none;
+}
+.navbar .container .nav-links ul li a {
+  text-decoration: none;
+  color: black;
+}
+.navbar .container .nav-links ul li a:hover {
+  color: blue;
+}
+.menu-bar {
+  color: black;
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+.menu-bar {
+  color: black;
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.aside-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  animation: slideIn 0.5s forwards;
+}
+.aside-links ul {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+  align-items: center;
+}
+.aside-links ul li {
+  list-style: none;
+}
+.aside-links ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+.aside-links ul li a:hover {
+  color: blue;
+}
+.close-menu {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #000;
+  z-index: 2;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.hidden {
+  display: none;
+}
+@media screen and (width <=1150px) {
+  .first-img img {
+    width: 300px;
+    height: 200px;
+  }
+  .second-img img {
+    width: 250px;
+    height: 400px;
+  }
+  .join-us img {
+    width: 300px;
+    height: 70px;
+  }
+  .desc-content {
+    gap: 100px;
+  }
+  .desc-content img {
+    width: 400px;
+    height: 350px;
+  }
+}
+@media screen and (width <=920px) {
+  .first-img img {
+    width: 250px;
+    height: 150px;
+  }
+  .second-img img {
+    width: 200px;
+    height: 350px;
+  }
+  .join-us img {
+    width: 250px;
+    height: 50px;
+  }
+  .desc-content {
+    gap: 50px;
+  }
+  .desc-content img {
+    width: 350px;
+    height: 300px;
+  }
+  .about-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (width <=760px) {
+  .hero-content {
+    display: block;
+  }
+  .second-img img {
+    display: none;
+  }
+  .first-img {
+    display: none;
+  }
+  .join-us img {
+    width: 100%;
+    height: 200px;
+  }
+  .hero-title {
+    margin-top: 0;
+    max-width: 100%;
+  }
+  .hero-title h1 {
+    font-size: 40px;
+  }
+  .hero-subtitle {
+    font-size: 20px;
+  }
+  .desc-content img {
+    display: none;
+  }
+  .desc-content p {
+    font-size: 35px;
+  }
+  .desc-content {
+    display: block;
+    margin: 0 auto;
+  }
+  .desc-content p a {
+    font-size: 20px;
+    text-align: center;
+  }
+  .hero-subtitle {
+    display: none;
+  }
+}
+
+@media screen and (width <=770px) {
+  .about-cards {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  .about-heading h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+  .menu-bar {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+  }
+}
+@media screen and (width <=500px) {
+  .desc-content p {
+    font-size: 30px;
+  }
+  .desc-content p a {
+    font-size: 18px;
+  }
+  .about-heading h1 {
+    font-size: 30px;
+  }
+  .hero-title h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+@media screen and (width <=365px) {
+  .desc-content p {
+    font-size: 25px;
+    text-align: center;
+  }
+  .desc-content p a {
+    font-size: 16px;
+  }
+  .about-cards .card .card-img {
+    max-width: 200px;
+  }
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+  background-color: #1a2c50;
+}
+button:hover {
+  color: gold;
+}
+
+#result,
+#report {
+  margin-top: 20px;
+  color: #38393c;
+}
+
+.footer {
+  background: url("images/treadmill.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.footer h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+}

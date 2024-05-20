@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <title>Our Reviews</title>
+  </head>
+  <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Poppins:wght@400;500;600&display=swap");
+
+      :root {
+        --primary-color: #1a2c50;
+        --secondary-color: #f4f7fe;
+        --text-dark: #333333;
+        --text-light: #767268;
+        --extra-light: #ffffff;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Satoshi", sans-serif;
+        color: #1a2c50;
+      }
+
+      .section__container {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .header {
+        margin-bottom: 32px;
+      }
+
+      .header p {
+        letter-spacing: 2px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .header h1 {
+        font-size: 32px;
+        font-weight: 900;
+      }
+
+      .testimonials__grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        margin-bottom: 32px;
+      }
+
+      .card {
+        padding: 32px;
+        display: grid;
+        gap: 16px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+      .card i {
+        font-size: 40px;
+        color: gold;
+      }
+
+      .card p {
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .card hr {
+        width: 40px;
+        margin: auto;
+        color: #767268;
+      }
+
+      .card img {
+        width: 60px;
+        height: 60px;
+        margin: auto;
+        border-radius: 50%;
+        border: 1px solid #1a2c50;
+      }
+
+      .card .name {
+        font-size: 14px;
+        font-weight: 400;
+        color: #767268;
+        transition: 0.3s;
+      }
+
+      .card .name:hover {
+        color: #1a2c50;
+      }
+
+      .footer h4 {
+        font-size: 20px;
+        font-weight: 900;
+        margin-bottom: 16px;
+      }
+
+      .footer p {
+        max-width: 450px;
+        margin: auto;
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 32px;
+      }
+      img {
+        object-fit: cover;
+      }
+
+      @media screen and (width < 900px) {
+        .testimonials__grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+      }
+
+      @media screen and (width < 600px) {
+        .testimonials__grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px;
+      }
+      .logo img {
+        width: 100px;
+        height: 40px;
+        object-fit: cover;
+      }
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid black;
+      }
+      .nav-links {
+        display: flex;
+        justify-content: space-between;
+      }
+      .navbar .container .nav-links ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+      }
+      .navbar .container .nav-links ul li {
+        list-style: none;
+      }
+      .navbar .container .nav-links ul li a {
+        text-decoration: none;
+        color: black;
+      }
+      .navbar .container .nav-links ul li a:hover {
+        color: blue;
+      }
+      .menu-bar {
+        color: black;
+        display: none;
+        font-size: 25px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+      }
+      .footer {
+        background: url("images/treadmill.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .footer h1 {
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        padding-top: 100px;
+      }
+      .aside-content {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        animation: slideIn 0.5s forwards;
+      }
+      .aside-links ul {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px;
+        align-items: center;
+      }
+      .aside-links ul li {
+        list-style: none;
+      }
+      .aside-links ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+      }
+      .aside-links ul li a:hover {
+        color: blue;
+      }
+      .close-menu {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+      }
+      @keyframes slideIn {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      .hidden {
+        display: none;
+      }
+      @media screen and (width <=1150px) {
+        .first-img img {
+          width: 300px;
+          height: 200px;
+        }
+        .second-img img {
+          width: 250px;
+          height: 400px;
+        }
+        .join-us img {
+          width: 300px;
+          height: 70px;
+        }
+        .desc-content {
+          gap: 100px;
+        }
+        .desc-content img {
+          width: 400px;
+          height: 350px;
+        }
+      }
+      @media screen and (width <=920px) {
+        .first-img img {
+          width: 250px;
+          height: 150px;
+        }
+        .second-img img {
+          width: 200px;
+          height: 350px;
+        }
+        .join-us img {
+          width: 250px;
+          height: 50px;
+        }
+        .desc-content {
+          gap: 50px;
+        }
+        .desc-content img {
+          width: 350px;
+          height: 300px;
+        }
+        .about-cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media screen and (width <=760px) {
+        .hero-content {
+          display: block;
+        }
+        .second-img img {
+          display: none;
+        }
+        .first-img {
+          display: none;
+        }
+        .join-us img {
+          width: 100%;
+          height: 200px;
+        }
+        .hero-title {
+          margin-top: 0;
+          max-width: 100%;
+        }
+        .hero-title h1 {
+          font-size: 40px;
+        }
+        .hero-subtitle {
+          font-size: 20px;
+        }
+        .desc-content img {
+          display: none;
+        }
+        .desc-content p {
+          font-size: 35px;
+        }
+        .desc-content {
+          display: block;
+          margin: 0 auto;
+        }
+        .desc-content p a {
+          font-size: 20px;
+          text-align: center;
+        }
+        .hero-subtitle {
+          display: none;
+        }
+      }
+
+      @media screen and (width <=770px) {
+        .about-cards {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
+        }
+        .about-heading h1 {
+          font-size: 40px;
+          text-align: center;
+        }
+        .menu-bar {
+          display: block;
+        }
+        .nav-links {
+          display: none;
+        }
+      }
+      @media screen and (width <=500px) {
+        .desc-content p {
+          font-size: 30px;
+        }
+        .desc-content p a {
+          font-size: 18px;
+        }
+        .about-heading h1 {
+          font-size: 30px;
+        }
+        .hero-title h1 {
+          font-size: 30px;
+          text-align: center;
+        }
+      }
+      @media screen and (width <=365px) {
+        .desc-content p {
+          font-size: 25px;
+          text-align: center;
+        }
+        .desc-content p a {
+          font-size: 16px;
+        }
+        .about-cards .card .card-img {
+          max-width: 200px;
+        }
+      }
+    </style>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <img src="images/logo.jpg" alt="logo" />
+          </div>
+          <div class="nav-links">
+            <ul>
+              <li><a href="Index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="AboutUs.html">About us</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="contact_us.html">Contact us</a></li>
+              <li><a href="BMI.html">BMI </a></li>
+            </ul>
+          </div>
+          <button class="menu-bar">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+      <aside class="aside-content hidden">
+        <div class="container">
+          <div class="aside-links">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="AboutUs.html">About us</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="contact_us.html">Contact us</a></li>
+              <li><a href="BMI.html">BMI</a></li>
+            </ul>
+          </div>
+          <button class="close-menu hidden">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </aside>
+    </header>
+    <div class="section__container">
+      <div class="header">
+        <p>TESTIMONIALS</p>
+        <h1>What our clients say about us.</h1>
+      </div>
+      <div class="testimonials__grid">
+        <div class="card">
+          <span><i class="ri-double-quotes-l"></i></span>
+          <p>
+            I've been working with these guys for a long time and I can say that
+            my health is in the perfect hands.
+          </p>
+          <hr />
+          <img src="images/cbum.jpg" alt="user" />
+          <p class="name">Chris B.</p>
+        </div>
+        <div class="card">
+          <span><i class="ri-double-quotes-l"></i></span>
+          <p>
+            Joining GoGym was a great move in my life and i suggest anyone that
+            wants to change their health for a better to join GoGym!
+          </p>
+          <hr />
+          <img src="images/samsulek.jpg" alt="user" />
+          <p class="name">Sam Sulek</p>
+        </div>
+        <div class="card">
+          <span><i class="ri-double-quotes-l"></i></span>
+          <p>
+            I Joined GoGym and I have never felt better in my life, I have lost
+            weight and gained muscle mass.
+          </p>
+          <hr />
+          <img src="images/bradley.jpg" alt="user" />
+          <p class="name">Bradley Martynt</p>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <h1>
+            Your health account, your bank account, they’re the same thing. The
+            more you put in, the more you can take out.
+          </h1>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const asideContent = document.querySelector(".aside-content");
+      const closeAside = document.querySelector(".close-menu");
+      const openAside = document.querySelector(".menu-bar");
+
+      openAside.addEventListener("click", () => {
+        asideContent.classList.toggle("hidden");
+        openAside.classList.toggle("hidden");
+        closeAside.classList.toggle("hidden");
+      });
+
+      closeAside.addEventListener("click", () => {
+        asideContent.classList.toggle("hidden");
+        openAside.classList.toggle("hidden");
+        closeAside.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

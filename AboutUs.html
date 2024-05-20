@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <link rel="stylesheet" href="about.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <img src="images/logo.jpg" alt="logo" />
+        </div>
+        <div class="nav-links">
+          <ul>
+            <li><a href="index.html"></a> Home</li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="AboutUs.html">About us</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact_us.html">Contact us</a></li>
+            <li><a href="BMI.html">BMI </a></li>
+          </ul>
+        </div>
+        <button class="menu-bar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+    <aside class="aside-content hidden">
+      <div class="container">
+        <div class="aside-links">
+          <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="AboutUs.html">About us</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact_us.html">Contact us</a></li>
+            <li><a href="BMI.html">BMI</a></li>
+          </ul>
+        </div>
+        <button class="close-menu hidden">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </aside>
+  </header>
+  <body>
+    <div class="about-section">
+      <h1>Who we are !</h1>
+      <p>Transforming Lives, One Workout at a Time</p>
+      <p>
+        Our gym is not just a place to work out; it's a community where
+        individuals come together to challenge themselves, support each other,
+        and achieve their fitness goals. We strive to create an environment that
+        fosters motivation, positivity, and personal growth.
+      </p>
+    </div>
+
+    <h2 style="text-align: center">Coaches</h2>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src="images/coach_1.jpg" alt="Mike" style="width: 100%" />
+          <div class="container">
+            <h2>Thomas D.</h2>
+            <p class="title">Athletic trainer</p>
+            <p>
+              I specialize in injury prevention, rehabilitation, and
+              sports-specific conditioning, tailoring programs to fit your
+              unique needs and goals. Whether you're recovering from an injury
+              or aiming to improve your game, I'll be by your side every step of
+              the way, providing guidance, encouragement, and personalized care.
+            </p>
+            <p>202120093@students.asu.edu.jo</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="images/coach_2.jpg" alt="Jane" style="width: 100%" />
+          <div class="container">
+            <h2>Jane R.</h2>
+            <p class="title">Nutritionist</p>
+            <p>
+              As your nutrition coach, I'll work closely with you to create a
+              customized plan that fits your unique needs, preferences, and
+              lifestyle. Whether you're looking to improve your eating habits,
+              manage weight, enhance athletic performance, or address specific
+              health concerns, I'm here to provide practical advice, delicious
+              recipes, and ongoing encouragement.
+            </p>
+            <p>202210917@students.asu.edu.jo</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="images/coach_3.jpg" alt="Mark" style="width: 100%" />
+          <div class="container">
+            <h2>Mark W.</h2>
+            <p class="title">Personal trainer</p>
+            <p>
+              As your personal trainer, I'll be your partner, motivator, and
+              coach, guiding you through tailored workouts and providing expert
+              advice on nutrition and lifestyle. Whether you're aiming to build
+              muscle, lose weight, improve endurance, or simply adopt a
+              healthier lifestyle, I'm here to support you every step of the
+              way.
+            </p>
+            <p>202220506@students.asu.edu.jo</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <h1>Health is not valued till sickness comes..</h1>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const menuBar = document.querySelector(".menu-bar");
+      const closeMenu = document.querySelector(".close-menu");
+      const asideContent = document.querySelector(".aside-content");
+
+      menuBar.addEventListener("click", () => {
+        asideContent.classList.remove("hidden");
+        menuBar.classList.add("hidden");
+        closeMenu.classList.remove("hidden");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        asideContent.classList.add("hidden");
+        menuBar.classList.remove("hidden");
+        closeMenu.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>

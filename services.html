@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym Services</title>
+    <link rel="stylesheet" href="services.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+      const dateTimeElement = document.getElementById("dateTime");
+      const now = new Date();
+      dateTimeElement.textContent = now.toLocaleString();
+    });
+
+    function calculateBMI() {
+      const height = document.getElementById("height").value;
+      const weight = document.getElementById("weight").value;
+      const resultDiv = document.getElementById("result");
+      const reportDiv = document.getElementById("report");
+
+      if (height <= 0 || weight <= 0) {
+        resultDiv.textContent = "Please enter valid height and weight.";
+        return false;
+      }
+
+      const heightInMeters = height / 100;
+      const bmi = (weight / heightInMeters ** 2).toFixed(2);
+
+      let category = "";
+      if (bmi < 18.5) {
+        category = "Underweight";
+      } else if (bmi < 24.9) {
+        category = "Normal weight";
+      } else if (bmi < 29.9) {
+        category = "Overweight";
+      } else {
+        category = "Obese";
+      }
+
+      const report = `
+            <h2>BMI Report</h2>
+            <p><strong>Height:</strong> ${height} cm</p>
+            <p><strong>Weight:</strong> ${weight} kg</p>
+            <p><strong>BMI:</strong> ${bmi}</p>
+            <p><strong>Category:</strong> ${category}</p>
+        `;
+
+      resultDiv.textContent = `Your BMI is ${bmi} (${category}).`;
+
+      return false; // Prevent form submission
+    }
+  </script>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <img src="images/logo.jpg" alt="logo" />
+          </div>
+          <div class="nav-links">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="AboutUs.html">About us</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="contact_us.html">Contact us</a></li>
+              <li><a href="BMI.html">BMI </a></li>
+            </ul>
+          </div>
+          <button class="menu-bar">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+      <aside class="aside-content hidden">
+        <div class=".container">
+          <div class="aside-links">
+            <ul>
+              <li><a href="Index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="AboutUs.html">About us</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="contact_us.html">Contact us</a></li>
+              <li><a href="BMI.html">BMI</a></li>
+            </ul>
+          </div>
+          <button class="close-menu hidden">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </aside>
+    </header>
+
+    <section class="services .container-md">
+      <div class="service">
+        <h2 style="color: #1a2c50">Personal Training</h2>
+        <p>Get personalized training sessions with our certified trainers.</p>
+      </div>
+
+      <div class="service">
+        <h2 style="color: #1a2c50">Group Classes</h2>
+        <p>
+          Join our group fitness classes for a fun and motivating workout
+          experience.
+        </p>
+      </div>
+      <div class="service">
+        <h2 style="color: #1a2c50">Nutrition Counseling</h2>
+        <p>
+          Receive expert guidance on nutrition and diet planning for your
+          fitness goals.
+        </p>
+      </div>
+    </section>
+
+    <section class="bmi-calculator">
+      <h2 style="color: #1a2c50">BMI Calculator</h2>
+      <form id="bmiForm" onsubmit="return calculateBMI()">
+        <label for="height" style="color: dimgray">Height (cm):</label>
+        <input type="number" id="height" name="height" min="50" required /><span
+          class="error"
+          id="heightError"
+        ></span
+        ><br />
+
+        <label for="weight" style="color: dimgray">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" min="1" required /><span
+          class="error"
+          id="weightError"
+        ></span
+        ><br />
+
+        <button class="submit-btn" type="submit">Calculate BMI</button>
+      </form>
+
+      <!-- Result -->
+      <div id="result" style="color: rgb(52, 49, 49)"></div>
+
+      <!-- Report -->
+      <div id="report"></div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <h1>To enjoy the glow of good health, you must exercise</h1>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const asideContent = document.querySelector(".aside-content");
+      const closeAside = document.querySelector(".close-menu");
+      const openAside = document.querySelector(".menu-bar");
+
+      openAside.addEventListener("click", () => {
+        asideContent.classList.toggle("hidden");
+        openAside.classList.toggle("hidden");
+        closeAside.classList.toggle("hidden");
+      });
+
+      closeAside.addEventListener("click", () => {
+        asideContent.classList.toggle("hidden");
+        openAside.classList.toggle("hidden");
+        closeAside.classList.toggle("hidden");
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
